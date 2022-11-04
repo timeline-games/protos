@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package timeline_games.resources;
+
+import "timeline_games/common/language.proto";
+
+
+message Card {
+  string date = 1;
+  optional string date_text = 2;
+  string title = 3;
+  string action = 4;
+  string image = 5;
+  optional string help = 6;
+  optional string back = 7;
+  optional string link = 8;
+  optional bool ignore = 9;
+
+  CardFormat format = 20;
+  CardStyle style = 21;
+
+  optional string comment = 30;
+  optional string source = 31;
+}
+
+message CardFormat {
+  optional string extend_help_prefix = 2;
+  optional string extend_help_suffix = 3;
+}
+
+message CardStyle {
+  optional string height = 1;
+  optional string background_size = 2;
+}
+
+// Messages with Translations
+
+message CardWithTranslations {
+  string date = 1;
+  optional string date_text = 2;
+  timeline_games.common.StringOrTranslation title = 3;
+  timeline_games.common.StringOrTranslation action = 4;
+  string image = 5;
+  optional timeline_games.common.StringOrTranslation help = 6;
+  optional timeline_games.common.StringOrTranslation back = 7;
+  optional timeline_games.common.StringOrTranslation link = 8;
+  optional bool ignore = 9;
+
+  optional CardFormatWithTranslations format = 20;
+  optional CardStyle style = 21;
+
+  optional string comment = 30;
+  optional string source = 31;
+}
+
+message CardFormatWithTranslations {
+  optional timeline_games.common.StringOrTranslation extend_help_prefix = 2;
+  optional timeline_games.common.StringOrTranslation extend_help_suffix = 3;
+}
+
+
+

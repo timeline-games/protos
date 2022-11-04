@@ -1,0 +1,13 @@
+{
+  "name": "timeline.games.protos",
+  "version": "1.0.0",
+  "scripts": {
+    "protoc": "protoc -I ./ --es_out=./src/gen --es_opt=target=ts --plugin=protoc-gen-es=./node_modules/.bin/protoc-gen-es timeline_games/common/*.proto timeline_games/resources/*.proto",
+    "build": "npx tsc --project tsconfig.json --module ES2015 --outDir ./dist/esm --declaration --declarationDir ./dist/types"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^0.2.1",
+    "@bufbuild/protoc-gen-es": "^0.2.1",
+    "tsx": "^3.11.0"
+  }
+}

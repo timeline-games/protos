@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package timeline_games.common;
+
+
+message StringOrTranslation {
+  oneof union {
+    string value = 1;
+    Translation l = 2;
+  }
+}
+
+message Translation {
+  optional string en = 1;
+  optional string es = 2;
+}

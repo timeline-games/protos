@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package timeline_games.resources;
+
+import "timeline_games/common/language.proto";
+import "timeline_games/resources/card.proto";
+
+
+message Game {
+  string title = 1;
+  optional string description = 2;
+  optional string instructions = 3;
+  optional string image = 4;
+
+  GameOptions options = 10;
+  repeated string includes = 11;
+
+  repeated timeline_games.resources.Card cards = 20;
+
+  optional string source = 30;
+}
+
+message GameOptions {
+  optional string date_type = 1;
+  optional string compare = 2;
+  optional string template = 3;
+  optional string bc_abbr = 4;
+  optional string ac_abbr = 5;
+  optional string before_btn_text = 6;
+  optional string after_btn_text = 7;
+}
+
+
+// Serialization Messages
+
+message GameWithTranslations {
+  timeline_games.common.StringOrTranslation title = 1;
+  optional timeline_games.common.StringOrTranslation description = 2;
+  optional timeline_games.common.StringOrTranslation instructions = 3;
+  optional string image = 4;
+
+  optional GameOptionsWithTranslations options = 10;
+  repeated string includes = 11;
+
+  repeated CardWithTranslations cards = 20;
+
+  optional string source = 30;
+}
+
+
+message GameOptionsWithTranslations {
+  optional string date_type = 1;
+  optional string compare = 2;
+  optional timeline_games.common.StringOrTranslation template = 3;
+  optional timeline_games.common.StringOrTranslation bc_abbr = 4;
+  optional timeline_games.common.StringOrTranslation ac_abbr = 5;
+  optional timeline_games.common.StringOrTranslation before_btn_text = 6;
+  optional timeline_games.common.StringOrTranslation after_btn_text = 7;
+}
