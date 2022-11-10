@@ -22,17 +22,22 @@ message Game {
 }
 
 message GameOptions {
-  optional string date_type = 1;
-  optional string compare = 2;
-  optional string template = 3;
-  optional string bc_abbr = 4;
-  optional string ac_abbr = 5;
-  optional string before_btn_text = 6;
-  optional string after_btn_text = 7;
-  // optional string extend_help_prefix = 8;
-  // optional string extend_help_suffix = 9;
+  DateType date_type = 1;
+  optional string date_format = 2;  // Format used to parse the date
+  optional string date_format_compare = 3;  // Format used to compare the date
+  optional string date_template = 4;  // How to display the date on the card
+  optional string bc_abbr = 5;
+  optional string ac_abbr = 6;
+
+  optional string before_btn_text = 10;
+  optional string after_btn_text = 11;
 }
 
+enum DateType {
+  DATE_TYPE_UNSPECIFIED = 0;
+  DATE_TYPE_NUMBER = 1;
+  DATE_TYPE_DATE = 2;
+}
 
 // Serialization Messages
 
@@ -53,11 +58,14 @@ message GameWithTranslations {
 
 
 message GameOptionsWithTranslations {
-  optional string date_type = 1;
-  optional string compare = 2;
-  optional timeline_games.common.StringOrTranslation template = 3;
-  optional timeline_games.common.StringOrTranslation bc_abbr = 4;
-  optional timeline_games.common.StringOrTranslation ac_abbr = 5;
-  optional timeline_games.common.StringOrTranslation before_btn_text = 6;
-  optional timeline_games.common.StringOrTranslation after_btn_text = 7;
+  DateType date_type = 1;
+  optional string date_format = 2;  // Format used to parse the date
+  optional string date_format_compare = 3;  // Format used to compare the date
+  optional timeline_games.common.StringOrTranslation date_template = 4; // How to display the date on the card
+  optional timeline_games.common.StringOrTranslation bc_abbr = 5;
+  optional timeline_games.common.StringOrTranslation ac_abbr = 6;
+
+  optional timeline_games.common.StringOrTranslation before_btn_text = 10;
+  optional timeline_games.common.StringOrTranslation after_btn_text = 11;
+
 }
