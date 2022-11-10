@@ -18,6 +18,7 @@ message Game {
   repeated timeline_games.resources.Card cards = 20;
 
   optional string source = 30;
+  repeated string extras = 100;
 }
 
 message GameOptions {
@@ -28,6 +29,8 @@ message GameOptions {
   optional string ac_abbr = 5;
   optional string before_btn_text = 6;
   optional string after_btn_text = 7;
+  // optional string extend_help_prefix = 8;
+  // optional string extend_help_suffix = 9;
 }
 
 
@@ -45,6 +48,7 @@ message GameWithTranslations {
   repeated CardWithTranslations cards = 20;
 
   optional string source = 30;
+  repeated string extras = 100;
 }
 
 

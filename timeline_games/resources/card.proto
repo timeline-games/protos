@@ -21,6 +21,8 @@ message Card {
 
   optional string comment = 30;
   optional string source = 31;
+
+  repeated string extras = 100;
 }
 
 message CardFormat {
@@ -51,6 +53,8 @@ message CardWithTranslations {
 
   optional string comment = 30;
   optional string source = 31;
+
+  repeated string extras = 100;
 }
 
 message CardFormatWithTranslations {
