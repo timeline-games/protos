@@ -33,6 +33,7 @@ message CardFormat {
 message CardStyle {
   optional string height = 1;
   optional string background_size = 2;
+  optional string background_position = 3;
 }
 
 // Messages with Translations
