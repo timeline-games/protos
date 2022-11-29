@@ -11,6 +11,7 @@ message Game {
   optional string description = 2;
   optional string instructions = 3;
   optional string image = 4;
+  optional string image_large = 5;
 
   GameOptions options = 10;
   repeated string includes = 11;
@@ -35,7 +36,7 @@ message GameOptions {
 
 enum DateType {
   DATE_TYPE_UNSPECIFIED = 0;
-  DATE_TYPE_NUMBER = 1;
+  DATE_TYPE_QUANTITY = 1;
   DATE_TYPE_DATE = 2;
 }
 
@@ -46,6 +47,7 @@ message GameWithTranslations {
   optional timeline_games.common.StringOrTranslation description = 2;
   optional timeline_games.common.StringOrTranslation instructions = 3;
   optional string image = 4;
+  optional string image_large = 5;
 
   optional GameOptionsWithTranslations options = 10;
   repeated string includes = 11;
