@@ -12,6 +12,7 @@ message Game {
   optional string instructions = 3;
   optional string image = 4;
   optional string image_large = 5;
+  optional string last_updated = 6;
 
   GameOptions options = 10;
   repeated string includes = 11;
@@ -48,6 +49,7 @@ message GameWithTranslations {
   optional timeline_games.common.StringOrTranslation instructions = 3;
   optional string image = 4;
   optional string image_large = 5;
+  optional string last_updated = 6;
 
   optional GameOptionsWithTranslations options = 10;
   repeated string includes = 11;
