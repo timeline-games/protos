@@ -26,9 +26,11 @@ message Game {
 }
 
 message Images {
-  optional string small = 1;
-  optional string medium = 2;
-  optional string large = 3;
+  optional string default = 1;
+  optional string tiny = 2;
+  optional string small = 3;
+  optional string medium = 4;
+  optional string large = 5;
 }
 
 message GameOptions {
