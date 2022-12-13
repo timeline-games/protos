@@ -10,9 +10,8 @@ message Game {
   string title = 1;
   optional string description = 2;
   optional string instructions = 3;
-  optional string image = 4;
-  optional string image_large = 5;
-  optional string last_updated = 6;
+  optional Images images = 4;
+  optional string last_updated = 5;
 
   GameOptions options = 10;
   repeated string includes = 11;
@@ -21,6 +20,15 @@ message Game {
 
   optional string source = 30;
   repeated string extras = 100;
+
+  // Deprecated
+  // optional string image = 1000;
+}
+
+message Images {
+  optional string small = 1;
+  optional string medium = 2;
+  optional string large = 3;
 }
 
 message GameOptions {
@@ -47,9 +55,8 @@ message GameWithTranslations {
   timeline_games.common.StringOrTranslation title = 1;
   optional timeline_games.common.StringOrTranslation description = 2;
   optional timeline_games.common.StringOrTranslation instructions = 3;
-  optional string image = 4;
-  optional string image_large = 5;
-  optional string last_updated = 6;
+  optional Images images = 4;
+  optional string last_updated = 5;
 
   optional GameOptionsWithTranslations options = 10;
   repeated string includes = 11;
@@ -58,6 +65,9 @@ message GameWithTranslations {
 
   optional string source = 30;
   repeated string extras = 100;
+
+  // Deprecated
+  // optional string image = 1000;
 }
 
 
