@@ -22,7 +22,7 @@ message Game {
   repeated string extras = 100;
 
   // Deprecated
-  // optional string image = 1000;
+  optional string image = 1000;
 }
 
 message Images {
@@ -67,7 +67,7 @@ message GameWithTranslations {
   repeated string extras = 100;
 
   // Deprecated
-  // optional string image = 1000;
+  optional string image = 1000;
 }
 
 
